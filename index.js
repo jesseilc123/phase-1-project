@@ -8,9 +8,9 @@ function renderPokemon(pokemon){
     let card = document.createElement("li")
     card.className = "card"
     card.innerHTML = `
-    <img src="${pokemon.image}">
+    <img src="${pokemon.image}" class="pokemon-image">
     `
-    document.querySelector("#pokemon-cards").append(card)
+    document.querySelector("#pokemon-cards").appendChild(card)
 }
 
 function fetchRequest(){

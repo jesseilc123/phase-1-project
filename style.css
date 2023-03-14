@@ -1,7 +1,20 @@
 .card{
     text-align: center;
     border: black solid 1px;
-    width: 15rem;
-    height: 25rem;
+    width: 20rem;
+    height: 30rem;
+    display: inline-grid;
     margin: 1rem 2rem;
+    box-shadow: 3px 4px black;
+}
+
+#pokemon-cards{
+    margin: 2rem
+}
+
+.pokemon-image{
+    margin-top: 5px;
+    justify-self: center;
+    height: 25rem;
+    width: auto;
 }
