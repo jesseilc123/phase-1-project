@@ -17,9 +17,16 @@
         {
             "id": 3,
             "name": "Charizard",
-            "image": "https://www.tcgplayer.com/product/219233/pokemon-swsh03-darkness-ablaze-charizard-vmax?xid=pi21425f1f-9b31-4594-bade-d6946a9b284f&Language=English&page=1",
+            "image": "https://product-images.tcgplayer.com/fit-in/437x437/219233.jpg",
             "type": "fire",
             "price": 250.00
+        },
+        {
+            "id": 4,
+            "name": "Pikachu",
+            "image": "https://product-images.tcgplayer.com/fit-in/437x437/284258.jpg",
+            "type": "electric",
+            "price": 30.00
         }
     ]
 }
