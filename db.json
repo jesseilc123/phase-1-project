@@ -4,13 +4,22 @@
             "id": 1,
             "name": "Squirtle",
             "image": "https://product-images.tcgplayer.com/fit-in/437x437/89488.jpg",
+            "type": "water",
             "price": 5.00
         },
         {
             "id": 2,
             "name": "Ivysaur",
             "image": "https://product-images.tcgplayer.com/fit-in/437x437/86295.jpg",
+            "type": "grass",
             "price": 10.00
+        },
+        {
+            "id": 3,
+            "name": "Charizard",
+            "image": "https://www.tcgplayer.com/product/219233/pokemon-swsh03-darkness-ablaze-charizard-vmax?xid=pi21425f1f-9b31-4594-bade-d6946a9b284f&Language=English&page=1",
+            "type": "fire",
+            "price": 250.00
         }
     ]
 }
