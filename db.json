@@ -1,0 +1,10 @@
+{
+    "pokemon":[
+        {
+            "id": 1,
+            "name": "Squirtle",
+            "image": "https://product-images.tcgplayer.com/fit-in/437x437/89488.jpg",
+            "price": 5
+        }
+    ]
+}
