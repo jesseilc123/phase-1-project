@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function hideForm(){
     let addPokemon = false;
+
+    const addBtn = document.querySelector("#new-toy-btn");
 }
 function renderPokemon(pokemon){
     let card = document.createElement("li")
@@ -14,7 +16,7 @@ function renderPokemon(pokemon){
         <p>${pokemon.name}</p>
         <p>$${pokemon.price}</p>
         <p>${pokemon.type}</p>
-        <btn>Sell</btn>
+        <button>Sell</button>
     </div>
     `
     document.querySelector("#pokemon-cards").appendChild(card)
