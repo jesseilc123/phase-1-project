@@ -9,6 +9,10 @@ function renderPokemon(pokemon){
     card.className = "card"
     card.innerHTML = `
     <img src="${pokemon.image}" class="pokemon-image">
+    <div class="card=content">
+        <p>${pokemon.name}</p>
+        <p>${pokemon.type}</p>
+        <p>$${pokemon.price}</p>
     `
     document.querySelector("#pokemon-cards").appendChild(card)
 }

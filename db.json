@@ -4,35 +4,35 @@
             "id": 1,
             "name": "Squirtle",
             "image": "https://product-images.tcgplayer.com/fit-in/437x437/89488.jpg",
-            "type": "water",
+            "type": "Water",
             "price": 5.00
         },
         {
             "id": 2,
             "name": "Ivysaur",
             "image": "https://product-images.tcgplayer.com/fit-in/437x437/86295.jpg",
-            "type": "grass",
+            "type": "Grass",
             "price": 10.00
         },
         {
             "id": 3,
             "name": "Charizard",
             "image": "https://product-images.tcgplayer.com/fit-in/437x437/219233.jpg",
-            "type": "fire",
+            "type": "Fire",
             "price": 250.00
         },
         {
             "id": 4,
             "name": "Pikachu",
             "image": "https://product-images.tcgplayer.com/fit-in/437x437/284258.jpg",
-            "type": "electric",
+            "type": "Electric",
             "price": 30.00
         },
         {
             "id": 5,
             "name": "Jigglypuff",
             "image": "https://product-images.tcgplayer.com/fit-in/437x437/85298.jpg",
-            "type": "normal",
+            "type": "Normal",
             "price": 7.00
         }
     ]
