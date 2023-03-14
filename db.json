@@ -4,7 +4,13 @@
             "id": 1,
             "name": "Squirtle",
             "image": "https://product-images.tcgplayer.com/fit-in/437x437/89488.jpg",
-            "price": 5
+            "price": 5.00
+        },
+        {
+            "id": 2,
+            "name": "Ivysaur",
+            "image": "https://product-images.tcgplayer.com/fit-in/437x437/86295.jpg",
+            "price": 10.00
         }
     ]
 }
