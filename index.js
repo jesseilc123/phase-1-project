@@ -1,18 +1,21 @@
-let addPokemon = false;
-
 document.addEventListener("DOMContentLoaded", () => {
     fetchRequest()
 })
 
+function hideForm(){
+    let addPokemon = false;
+}
 function renderPokemon(pokemon){
     let card = document.createElement("li")
     card.className = "card"
     card.innerHTML = `
     <img src="${pokemon.image}" class="pokemon-image">
-    <div class="card=content">
+    <div class="card-content">
         <p>${pokemon.name}</p>
-        <p>${pokemon.type}</p>
         <p>$${pokemon.price}</p>
+        <p>${pokemon.type}</p>
+        <btn>Sell</btn>
+    </div>
     `
     document.querySelector("#pokemon-cards").appendChild(card)
 }
