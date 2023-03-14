@@ -27,6 +27,13 @@
             "image": "https://product-images.tcgplayer.com/fit-in/437x437/284258.jpg",
             "type": "electric",
             "price": 30.00
+        },
+        {
+            "id": 5,
+            "name": "Jigglypuff",
+            "image": "https://product-images.tcgplayer.com/fit-in/437x437/85298.jpg",
+            "type": "normal",
+            "price": 7.00
         }
     ]
 }
