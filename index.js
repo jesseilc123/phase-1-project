@@ -67,21 +67,23 @@ function postCard(pokemonObj){
 function sellCard(card, pokemon){
     card.querySelector("#sell-card").addEventListener("click", () => {
         card.remove()
-        patchSellCard(pokemon.id)
+        // patchSellCard(pokemon.id)
+        let balance = document.querySelector("#balance")
+        balance.innerText = parseFloat(balance.innerText) + pokemon.price
     })
 }
 
-function patchSellCard(id){
-    fetch(`http://localhost:3000/pokemon/${id}`, {
-        method: "DELETE",
-        headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json"
-        }
-    })
-    .then(response => response.json())
-    .then(pokemon => console.log(pokemon))
-}
+// function patchSellCard(id){
+//     fetch(`http://localhost:3000/pokemon/${id}`, {
+//         method: "DELETE",
+//         headers: {
+//             "Content-Type": "application/json",
+//             Accept: "application/json"
+//         }
+//     })
+//     .then(response => response.json())
+//     .then(pokemon => console.log(pokemon))
+// }
 
 function fetchRequest(){
     fetch("http://localhost:3000/pokemon")
