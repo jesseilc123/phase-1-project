@@ -47,9 +47,29 @@ function renderPokemon(pokemon){
     </div>
     `
     sellCard(card, pokemon.id)
-
     document.querySelector("#pokemon-cards").appendChild(card)
-    console.log(pokemon.id)
+}
+
+function handleBalance(){
+
+}
+
+function sellCard(card, pokemon){
+    card.querySelector("#sell-card").addEventListener("click", () => {
+        card.remove()
+
+        deleteSellCard(pokemon)
+    })
+}
+
+function fetchRequest(){
+    fetch("http://localhost:3000/pokemon")
+    .then(request => request.json())
+    .then(data => data.forEach(pokemon => renderPokemon(pokemon)))
+
+    fetch("http://localhost:3000/total-balance")
+    .then(request => request.json())
+    .then(data => data.forEach(value => handleBalance(value)))
 }
 
 function postCard(pokemonObj){
@@ -65,15 +85,11 @@ function postCard(pokemonObj){
     .then(pokemon => renderPokemon(pokemon))
 }
 
-function sellCard(card, pokemon){
-    card.querySelector("#sell-card").addEventListener("click", () => {
-        card.remove()
-        console.log(pokemon)
-        patchSellCard(pokemon)
-    })
+function patchBalance(){
+
 }
 
-function patchSellCard(id){
+function deleteSellCard(id){
     fetch(`http://localhost:3000/pokemon/${id}`, {
         method: "DELETE",
         headers: {
@@ -82,11 +98,5 @@ function patchSellCard(id){
         }
     })
     .then(response => response.json())
-    .then(pokemon => console.log(pokemon))
-}
-
-function fetchRequest(){
-    fetch("http://localhost:3000/pokemon")
-    .then(request => request.json())
-    .then(data => data.forEach(pokemon => renderPokemon(pokemon)))
+    .then(pokemon => pokemon)
 }
