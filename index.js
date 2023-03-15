@@ -11,9 +11,10 @@ function handleForm(){
             name: event.target.name.value,
             image: event.target.image.value,
             type: event.target.type.value,
-            price: event.target.price.value
+            price: parseFloat(event.target.price.value)
         }
 
+        postCard(formData)
         renderPokemon(formData)
     })
 }
@@ -49,7 +50,17 @@ function renderPokemon(pokemon){
     document.querySelector("#pokemon-cards").appendChild(card)
 }
 
-function sellCard(){}
+function postCard(pokemonObj){
+    fetch("http://localhost:3000/pokemon", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body:JSON.stringify(pokemonObj)
+    })
+    .then(response => response.json())
+    .then(pokemon => console.log(pokemon))
+}
 
 function fetchRequest(){
     fetch("http://localhost:3000/pokemon")

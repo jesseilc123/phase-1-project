@@ -1,39 +1,46 @@
 {
-    "pokemon":[
-        {
-            "id": 1,
-            "name": "Squirtle",
-            "image": "https://product-images.tcgplayer.com/fit-in/437x437/89488.jpg",
-            "type": "Water",
-            "price": 5.00
-        },
-        {
-            "id": 2,
-            "name": "Ivysaur",
-            "image": "https://product-images.tcgplayer.com/fit-in/437x437/86295.jpg",
-            "type": "Grass",
-            "price": 10.00
-        },
-        {
-            "id": 3,
-            "name": "Charizard",
-            "image": "https://product-images.tcgplayer.com/fit-in/437x437/219233.jpg",
-            "type": "Fire",
-            "price": 250.00
-        },
-        {
-            "id": 4,
-            "name": "Pikachu",
-            "image": "https://product-images.tcgplayer.com/fit-in/437x437/284258.jpg",
-            "type": "Electric",
-            "price": 30.00
-        },
-        {
-            "id": 5,
-            "name": "Jigglypuff",
-            "image": "https://product-images.tcgplayer.com/fit-in/437x437/85298.jpg",
-            "type": "Normal",
-            "price": 7.00
-        }
-    ]
+  "pokemon": [
+    {
+      "id": 1,
+      "name": "Squirtle",
+      "image": "https://product-images.tcgplayer.com/fit-in/437x437/89488.jpg",
+      "type": "Water",
+      "price": 5
+    },
+    {
+      "id": 2,
+      "name": "Ivysaur",
+      "image": "https://product-images.tcgplayer.com/fit-in/437x437/86295.jpg",
+      "type": "Grass",
+      "price": 10
+    },
+    {
+      "id": 3,
+      "name": "Charizard",
+      "image": "https://product-images.tcgplayer.com/fit-in/437x437/219233.jpg",
+      "type": "Fire",
+      "price": 250
+    },
+    {
+      "id": 4,
+      "name": "Pikachu",
+      "image": "https://product-images.tcgplayer.com/fit-in/437x437/284258.jpg",
+      "type": "Electric",
+      "price": 30
+    },
+    {
+      "id": 5,
+      "name": "Jigglypuff",
+      "image": "https://product-images.tcgplayer.com/fit-in/437x437/85298.jpg",
+      "type": "Normal",
+      "price": 7
+    },
+    {
+      "name": "Gengar",
+      "image": "https://product-images.tcgplayer.com/fit-in/437x437/85674.jpg",
+      "type": "Ghost",
+      "price": 30,
+      "id": 6
+    }
+  ]
 }
