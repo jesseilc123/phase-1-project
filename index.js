@@ -15,6 +15,8 @@ function handleForm(){
         }
 
         postCard(formData)
+        document.querySelector("#balance").innerText = parseFloat(document.querySelector("#balance").innerText) - formData.price
+        patchBalance(parseFloat(document.querySelector("#balance").innerText))
     })
 }
 
@@ -46,8 +48,9 @@ function renderPokemon(pokemon){
         <button id="sell-card">Sell</button>
     </div>
     `
-    sellCard(card, pokemon)
     document.querySelector("#pokemon-cards").appendChild(card)
+
+    sellCard(card, pokemon) 
 }
 
 function handleBalance(value){
@@ -58,10 +61,9 @@ function handleBalance(value){
 function sellCard(card, pokemon){
     card.querySelector("#sell-card").addEventListener("click", () => {
         card.remove()
-        let totalBalance = document.querySelector("#balance")
-        totalBalance.innerText = parseFloat(totalBalance.innerText) + pokemon.price
+        document.querySelector("#balance").innerText = parseFloat(document.querySelector("#balance").innerText) + pokemon.price
         deleteSellCard(pokemon.id)
-        patchBalance(parseFloat(totalBalance.innerText))
+        patchBalance(parseFloat(document.querySelector("#balance").innerText))
     })
 }
 
