@@ -48,7 +48,7 @@ function renderPokemon(pokemon){
     </div>
     `
     document.querySelector("#pokemon-cards").appendChild(card)
-    sellCard(card)
+    sellCard(card, pokemon)
 }
 
 function postCard(pokemonObj){
@@ -64,10 +64,23 @@ function postCard(pokemonObj){
     .then(pokemon => console.log(pokemon))
 }
 
-function sellCard(card){
+function sellCard(card, pokemon){
     card.querySelector("#sell-card").addEventListener("click", () => {
         card.remove()
+        patchSellCard(pokemon.id)
     })
+}
+
+function patchSellCard(id){
+    fetch(`http://localhost:3000/pokemon/${id}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        }
+    })
+    .then(response => response.json())
+    .then(pokemon => console.log(pokemon))
 }
 
 function fetchRequest(){

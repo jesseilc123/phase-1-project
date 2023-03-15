@@ -34,13 +34,6 @@
       "image": "https://product-images.tcgplayer.com/fit-in/437x437/85298.jpg",
       "type": "Normal",
       "price": 7
-    },
-    {
-      "name": "Gengar",
-      "image": "https://product-images.tcgplayer.com/fit-in/437x437/85674.jpg",
-      "type": "Ghost",
-      "price": 30,
-      "id": 6
     }
   ]
 }
