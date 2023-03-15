@@ -16,7 +16,7 @@
             <h4 id="balance">$1000</h4>
         </div>
 
-        <div class="container">
+        <div class="container" style="display: none;">
             <form class="buy-card-form">
                 <h4>Buy a new card!</h4>
                 <input
@@ -29,9 +29,25 @@
                 <br/>
                 <input
                     type="text"
-                    name="name"
+                    name="image"
                     value=""
                     placeholder="Enter the pokemon card's image..."
+                    class="input-text"
+                />
+                <br/>
+                <input
+                    type="text"
+                    name="type"
+                    value=""
+                    placeholder="Enter the pokemon card's type..."
+                    class="input-text"
+                />
+                <br/>
+                <input
+                    type="text"
+                    name="price"
+                    value=""
+                    placeholder="Enter the pokemon card's price..."
                     class="input-text"
                 />
                 <br/>
@@ -44,7 +60,7 @@
             </form>
         </div>
         <p style="text-align: center;">
-            <button id="buy-new-card">Buy new Pokemon card!</button>
+            <button id="buy-new-card-button">Buy new Pokemon card!</button>
         </p>
         <div id="pokemon-cards">
             <script type="text/javascript" src="index.js"></script>

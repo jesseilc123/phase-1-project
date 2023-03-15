@@ -1,11 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
+    handleForm()
+    hideForm()
     fetchRequest()
 })
 
-function hideForm(){
-    let addPokemon = false;
+function handleForm(){
+    document.querySelector(".buy-card-form").addEventListener("submit", (event) => {
+        event.preventDefault()
+        let formData = {
+            name: event.target.name.value,
+            image: event.target.image.value,
+            type: event.target.type.value,
+            price: event.target.price.value
+        }
 
-    const addBtn = document.querySelector("#new-toy-btn");
+        renderPokemon(formData)
+    })
+}
+
+function hideForm(){
+    let buyPokemon = false;
+
+    const addBtn = document.querySelector("#buy-new-card-button");
+    const pokemonFormContainer = document.querySelector(".container")
+    addBtn.addEventListener("click", () => {
+        buyPokemon = !buyPokemon;
+        if(buyPokemon){
+            pokemonFormContainer.style.display = "block";
+        }else{
+            pokemonFormContainer.style.display = "none";
+        }
+    })
 }
 function renderPokemon(pokemon){
     let card = document.createElement("li")
