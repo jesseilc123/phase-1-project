@@ -15,7 +15,6 @@ function handleForm(){
         }
 
         postCard(formData)
-        renderPokemon(formData)
     })
 }
 
@@ -47,8 +46,10 @@ function renderPokemon(pokemon){
         <button id="sell-card">Sell</button>
     </div>
     `
+    sellCard(card, pokemon.id)
+
     document.querySelector("#pokemon-cards").appendChild(card)
-    sellCard(card, pokemon)
+    console.log(pokemon.id)
 }
 
 function postCard(pokemonObj){
@@ -58,32 +59,31 @@ function postCard(pokemonObj){
             "Content-Type": "application/json",
             Accept: "application/json"
         },
-        body:JSON.stringify(pokemonObj)
+        body: JSON.stringify(pokemonObj)
     })
     .then(response => response.json())
-    .then(pokemon => console.log(pokemon))
+    .then(pokemon => renderPokemon(pokemon))
 }
 
 function sellCard(card, pokemon){
     card.querySelector("#sell-card").addEventListener("click", () => {
         card.remove()
-        // patchSellCard(pokemon.id)
-        let balance = document.querySelector("#balance")
-        balance.innerText = parseFloat(balance.innerText) + pokemon.price
+        console.log(pokemon)
+        patchSellCard(pokemon)
     })
 }
 
-// function patchSellCard(id){
-//     fetch(`http://localhost:3000/pokemon/${id}`, {
-//         method: "DELETE",
-//         headers: {
-//             "Content-Type": "application/json",
-//             Accept: "application/json"
-//         }
-//     })
-//     .then(response => response.json())
-//     .then(pokemon => console.log(pokemon))
-// }
+function patchSellCard(id){
+    fetch(`http://localhost:3000/pokemon/${id}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        }
+    })
+    .then(response => response.json())
+    .then(pokemon => console.log(pokemon))
+}
 
 function fetchRequest(){
     fetch("http://localhost:3000/pokemon")

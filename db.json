@@ -35,5 +35,11 @@
       "type": "Normal",
       "price": 7
     }
+  ],
+  "total-balance": [
+    {
+      "id": 1,
+      "balance": 1000
+    }
   ]
 }
