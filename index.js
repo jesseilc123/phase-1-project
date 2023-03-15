@@ -24,11 +24,13 @@ function hideForm(){
     const addBtn = document.querySelector("#buy-new-card-button");
     const pokemonFormContainer = document.querySelector(".container")
     addBtn.addEventListener("click", () => {
-        buyPokemon = !buyPokemon;
+        buyPokemon = !buyPokemon; 
         if(buyPokemon){
             pokemonFormContainer.style.display = "block";
+            addBtn.innerText = "Close"
         }else{
             pokemonFormContainer.style.display = "none";
+            addBtn.innerText = "Buy new Pokemon Card!"
         }
     })
 }
@@ -46,6 +48,8 @@ function renderPokemon(pokemon){
     `
     document.querySelector("#pokemon-cards").appendChild(card)
 }
+
+function sellCard(){}
 
 function fetchRequest(){
     fetch("http://localhost:3000/pokemon")
