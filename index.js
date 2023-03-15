@@ -46,19 +46,22 @@ function renderPokemon(pokemon){
         <button id="sell-card">Sell</button>
     </div>
     `
-    sellCard(card, pokemon.id)
+    sellCard(card, pokemon)
     document.querySelector("#pokemon-cards").appendChild(card)
 }
 
-function handleBalance(){
-
+function handleBalance(value){
+    let totalBalance = document.querySelector("#balance")
+    totalBalance.innerText = value.balance
 }
 
 function sellCard(card, pokemon){
     card.querySelector("#sell-card").addEventListener("click", () => {
         card.remove()
-
-        deleteSellCard(pokemon)
+        let totalBalance = document.querySelector("#balance")
+        totalBalance.innerText = parseFloat(totalBalance.innerText) + pokemon.price
+        deleteSellCard(pokemon.id)
+        patchBalance(parseFloat(totalBalance.innerText))
     })
 }
 
@@ -85,8 +88,21 @@ function postCard(pokemonObj){
     .then(pokemon => renderPokemon(pokemon))
 }
 
-function patchBalance(){
-
+function patchBalance(balance){
+    let obj = {
+        "id": 1,
+        "balance": balance
+    }
+    fetch("http://localhost:3000/total-balance/1", {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        },
+        body: JSON.stringify(obj)
+    })
+    .then(response => response.json())
+    .then(balance => console.log(balance))
 }
 
 function deleteSellCard(id){
@@ -98,5 +114,5 @@ function deleteSellCard(id){
         }
     })
     .then(response => response.json())
-    .then(pokemon => pokemon)
+    .then(pokemon => console.log(pokemon))
 }
