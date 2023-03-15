@@ -44,22 +44,30 @@ function renderPokemon(pokemon){
         <p>${pokemon.name}</p>
         <p>$${pokemon.price}</p>
         <p>${pokemon.type}</p>
-        <button>Sell</button>
+        <button id="sell-card">Sell</button>
     </div>
     `
     document.querySelector("#pokemon-cards").appendChild(card)
+    sellCard(card)
 }
 
 function postCard(pokemonObj){
     fetch("http://localhost:3000/pokemon", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            Accept: "application/json"
         },
         body:JSON.stringify(pokemonObj)
     })
     .then(response => response.json())
     .then(pokemon => console.log(pokemon))
+}
+
+function sellCard(card){
+    card.querySelector("#sell-card").addEventListener("click", () => {
+        card.remove()
+    })
 }
 
 function fetchRequest(){
