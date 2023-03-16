@@ -11,13 +11,18 @@ function handleForm(){
             name: event.target.name.value,
             image: event.target.image.value,
             type: event.target.type.value,
-            price: parseFloat(event.target.price.value)
+            price: event.target.price.value
         }
 
-        postCard(formData)
-        document.querySelector("#balance").innerText = parseFloat(document.querySelector("#balance").innerText) - formData.price
-        patchBalance(parseFloat(document.querySelector("#balance").innerText))
-        alert("Pokemon Card successfully bought!")
+        if(formData.name === "" || formData.image === "" || formData.type === "" || formData.price === ""){
+            return alert("Please do not leave any of the criteria blank.")
+        } else {
+            postCard(formData)
+            document.querySelector("#balance").innerText = parseFloat(document.querySelector("#balance").innerText) - formData.price
+            patchBalance(parseFloat(document.querySelector("#balance").innerText))
+            alert("Pokemon Card successfully purchased!")
+            document.querySelector(".buy-card-form").reset()
+        }
     })
 }
 
@@ -62,7 +67,7 @@ function handleBalance(value){
 function sellCard(card, pokemon){
     card.querySelector("#sell-card").addEventListener("click", () => {
         card.remove()
-        document.querySelector("#balance").innerText = parseFloat(document.querySelector("#balance").innerText) + pokemon.price
+        document.querySelector("#balance").innerText = parseFloat(document.querySelector("#balance").innerText) + parseFloat(pokemon.price)
         deleteSellCard(pokemon.id)
         patchBalance(parseFloat(document.querySelector("#balance").innerText))
         alert("Pokemon Card successfully sold!")
