@@ -9,6 +9,21 @@
     justify-self: auto;
 }
 
+#page-header{
+    content: left;
+    background: rgb(249, 151, 151);
+    opacity: .8;
+    height: 12rem;
+    padding: 3rem;
+}
+
+#page-header h1{
+    position: absolute;
+    top: 13rem;
+    left: 12rem;
+    font-weight: 900;
+}
+
 #pokemon-cards{
     margin: 2rem;
 }
@@ -21,6 +36,7 @@
 }
 
 .card-content{
+    position: relative;
     justify-content: center;
     height: 60px;
     width: auto;
@@ -28,9 +44,81 @@
 }
 
 #player-info{
+    border: black solid 5px;
+    padding: 10px;
     position: absolute;
     top: 8px;
     right: 16px;
-    text-align: right;
+    text-align: left;
     font-size: 18px;
+}
+
+.data{
+    font-weight: 400;
+    background-color: yellow;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#buy-new-card-button{
+    position: relative;
+    background-color: lightcoral;
+    border-radius: 5px;
+    height: 2rem;
+    width: max-content;
+    color: whitesmoke;
+    font-size: 18px;
+    justify-self: center;
+    font-family: monospace;
+    margin: 3px;
+}
+
+#buy-new-card-button:hover{
+    background-color: whitesmoke;
+    border: #e04b52 solid 1px;
+    color: #e04b52; 
+}
+
+.buy-card-form{
+    background: yellow;
+}
+
+.top-left{
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 18px;
+    padding: 2px;
+    background-color: lightgray;
+    box-shadow: 3px 4px black;
+}
+
+.bottom-left{
+    position: absolute;
+    bottom: -15px;
+    left: 10px;
+    font-size: 18px;
+    padding: 2px;
+    background-color: lightgreen;
+    box-shadow: 3px 4px black;
+}
+
+.top-right{
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    font-size: 18px;
+    padding: 2px;
+    background-color: lightgray;
+    box-shadow: 3px 4px black;
+}
+
+#sell-card{
+    position: absolute;
+    bottom: 3px;
+    right: 10px;
+    font-weight: bolder;
+    font-size: medium;
+    background-color: red;
+    box-shadow: 2px 3px black;
 }

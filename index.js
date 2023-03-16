@@ -42,9 +42,9 @@ function renderPokemon(pokemon){
     card.innerHTML = `
     <img src="${pokemon.image}" class="pokemon-image">
     <div class="card-content">
-        <p>${pokemon.name}</p>
-        <p>$${pokemon.price}</p>
-        <p>${pokemon.type}</p>
+        <p class="top-left">${pokemon.name}</p>
+        <p class="bottom-left">$${pokemon.price}</p>
+        <p class="top-right">${pokemon.type}</p>
         <button id="sell-card">Sell</button>
     </div>
     `
