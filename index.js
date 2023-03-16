@@ -17,6 +17,7 @@ function handleForm(){
         postCard(formData)
         document.querySelector("#balance").innerText = parseFloat(document.querySelector("#balance").innerText) - formData.price
         patchBalance(parseFloat(document.querySelector("#balance").innerText))
+        alert("Pokemon Card successfully bought!")
     })
 }
 
@@ -43,7 +44,7 @@ function renderPokemon(pokemon){
     <img src="${pokemon.image}" class="pokemon-image">
     <div class="card-content">
         <p class="top-left">${pokemon.name}</p>
-        <p class="bottom-left">$${pokemon.price}</p>
+        <p class="bottom-left">$${pokemon.price} USD</p>
         <p class="top-right">${pokemon.type}</p>
         <button id="sell-card">Sell</button>
     </div>
@@ -64,6 +65,7 @@ function sellCard(card, pokemon){
         document.querySelector("#balance").innerText = parseFloat(document.querySelector("#balance").innerText) + pokemon.price
         deleteSellCard(pokemon.id)
         patchBalance(parseFloat(document.querySelector("#balance").innerText))
+        alert("Pokemon Card successfully sold!")
     })
 }
 
