@@ -1,32 +1,36 @@
 # Pokemon Card Collector (PC^2)
 
-Pokemon Card Collector is a website where you can buy and sell digital Pokemon cards! 
+Pokemon Card Collector is a website where you can buy and sell digital Pokemon Cards!*
+
+*theoretically
 
 ## Brief Summary
 
-The site is designed for people to purchase and sell Pokemon cards. You have a collection of digital Pokemon cards stored on the website. You can buy a card by entering the prompted criteria in the form. Once purchased the card will now be part of your digital collection. But be warned, as you purchase cards your overall balance will go down. To combat this, you can sell your unwanted Pokemon cards from your collection at a click of a button! Once a card is sold it will be removed from your digital collection, however, your overall balance will increase!
+The site is designed for people to purchase and sell Pokemon Cards. You have a collection of digital Pokemon Cards stored on the website. You can buy a Pokemon Card by entering the prompted criteria in the form. Once purchased the Pokemon Card will now be part of your digital collection. But be warned, as you purchase Pokemon Cards your overall balance will go down. To combat this, you can sell your unwanted Pokemon Cards from your collection at a click of a button! Once a Pokemon Card is sold it will be removed from your digital collection, however your overall balance will increase!
+
+![Alt text](vscode-local:/c%3A/Users/Swaggienoodles/Desktop/ezgif-2-c604871abf.gif)
 
 ## Key Features
 
 Here are some key features:
 
     - An overall balance that changes dynamically 
-    - Ability to buy/sell digital cards 
-    - UI that displays digital collection
-    - Cards display Pokemon name, type, and price
+    - Ability to buy/sell digital Pokemon Cards 
+    - UI that displays your digital collection
+    - Collection displays the Pokemon's name, type, and price
 
 Technical features:
 
     - Use of Fetch requests to update website (GET, PATCH, DETELE)
-    - A button that opens and closes the form to purchase a new card
+    - A button that opens and closes the form to purchase a new Pokemon Card
     - The form will throw an error if the criteria is not filled
     - The form updates the db.json file when it is submitted
-    - A button that sells your card which updates the db.json file
+    - A button that sells your Pokemon Card which updates the db.json file
     - The balance updates the db.json when a purchase or sale occurs
 
 ## API Installation
 
-In order to get the server running, make sure you have "json-server" installed. To do this you would type the following into the terminal. ```bash npm install -g json-server ``` Once installed you can then start the server by typing the following into the terminal. ```bash json-server  --watch db.json ``` You know the server will be up and running when you see the following lines appear.
+In order to get the server running, make sure you have "json-server" installed. To do this you would type the following into the terminal. ```$ npm install -g json-server ``` Once installed you can then start the server by typing the following into the terminal. ```$ json-server  --watch db.json ``` You know the server will be up and running when you see the following lines appear in the terminal.
 ```bash
  \{^_^}/ hi!
 
