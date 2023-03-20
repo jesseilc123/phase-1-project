@@ -16,11 +16,14 @@ function handleForm(){
 
         if(formData.name === "" || formData.image === "" || formData.type === "" || formData.price === ""){
             return alert("Please do not leave any of the criteria blank.")
+        } 
+        if(parseFloat(formData.price) > parseFloat(document.querySelector("#balance").innerText)){
+            return alert("Insufficient funds.")
         } else {
             postCard(formData)
             document.querySelector("#balance").innerText = parseFloat(document.querySelector("#balance").innerText) - formData.price
             patchBalance(parseFloat(document.querySelector("#balance").innerText))
-            alert("Pokemon Card successfully purchased!")
+            alert("Pokemon card successfully purchased!")
             document.querySelector(".buy-card-form").reset()
         }
     })
@@ -38,7 +41,7 @@ function hideForm(){
             addBtn.innerText = "Close"
         }else{
             pokemonFormContainer.style.display = "none";
-            addBtn.innerText = "Buy new Pokemon Card!"
+            addBtn.innerText = "Buy new Pokemon card!"
         }
     })
 }
@@ -70,7 +73,7 @@ function sellCard(card, pokemon){
         document.querySelector("#balance").innerText = parseFloat(document.querySelector("#balance").innerText) + parseFloat(pokemon.price)
         deleteSellCard(pokemon.id)
         patchBalance(parseFloat(document.querySelector("#balance").innerText))
-        alert("Pokemon Card successfully sold!")
+        alert("Pokemon card successfully sold!")
     })
 }
 

@@ -1,31 +1,31 @@
 # Pokemon Card Collector (PC^2)
 
-Pokemon Card Collector is a website where you can buy and sell digital Pokemon Cards!*
+Pokemon Card Collector is a website where you can buy and sell digital Pokemon cards!*
 
 *theoretically
 
 ## Brief Summary
 
-The site is designed for people to purchase and sell Pokemon Cards. You have a collection of digital Pokemon Cards stored on the website. You can buy a Pokemon Card by entering the prompted criteria in the form. Once purchased the Pokemon Card will now be part of your digital collection. But be warned, as you purchase Pokemon Cards your overall balance will go down. To combat this, you can sell your unwanted Pokemon Cards from your collection at a click of a button! Once a Pokemon Card is sold it will be removed from your digital collection, however your overall balance will increase!
+The site is designed for people to purchase and sell Pokemon cards. You have a collection of digital Pokemon cards stored on the website. You can buy a Pokemon card by entering the prompted criteria in the form. Once purchased the Pokemon card will now be part of your digital collection. But be warned, as you purchase Pokemon cards your overall balance will go down. To combat this, you can sell your unwanted Pokemon cards from your collection at a click of a button! Once a Pokemon card is sold it will be removed from your digital collection, however your overall balance will increase!
 
-![Alt text](vscode-local:/c%3A/Users/Swaggienoodles/Desktop/ezgif-2-c604871abf.gif)
+[Here](https://www.youtube.com/watch?v=ujwB7h-YaGU) is a video demonstration. 
 
 ## Key Features
 
 Here are some key features:
 
     - An overall balance that changes dynamically 
-    - Ability to buy/sell digital Pokemon Cards 
+    - Ability to buy/sell digital Pokemon cards 
     - UI that displays your digital collection
     - Collection displays the Pokemon's name, type, and price
 
 Technical features:
 
     - Use of Fetch requests to update website (GET, PATCH, DETELE)
-    - A button that opens and closes the form to purchase a new Pokemon Card
+    - A button that opens and closes the form to purchase a new Pokemon card
     - The form will throw an error if the criteria is not filled
     - The form updates the db.json file when it is submitted
-    - A button that sells your Pokemon Card which updates the db.json file
+    - A button that sells your Pokemon card which updates the db.json file
     - The balance updates the db.json when a purchase or sale occurs
 
 ## API Installation
