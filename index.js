@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    handleForm()
     hideForm()
     fetchRequest()
+    handleForm()
 })
 
 function handleForm(){
@@ -21,7 +21,7 @@ function handleForm(){
             return alert("Insufficient funds.")
         } else {
             postCard(formData)
-            document.querySelector("#balance").innerText = parseFloat(document.querySelector("#balance").innerText) - formData.price
+            document.querySelector("#balance").innerText = parseFloat(document.querySelector("#balance").innerText) - parseFloat(formData.price)
             patchBalance(parseFloat(document.querySelector("#balance").innerText))
             alert("Pokemon card successfully purchased!")
             document.querySelector(".buy-card-form").reset()
@@ -32,19 +32,21 @@ function handleForm(){
 function hideForm(){
     let buyPokemon = false;
 
-    const addBtn = document.querySelector("#buy-new-card-button");
+    const formButton = document.querySelector("#buy-new-card-button");
     const pokemonFormContainer = document.querySelector(".container")
-    addBtn.addEventListener("click", () => {
+
+    formButton.addEventListener("click", () => {
         buyPokemon = !buyPokemon; 
         if(buyPokemon){
             pokemonFormContainer.style.display = "block";
-            addBtn.innerText = "Close"
+            formButton.innerText = "Close"
         }else{
             pokemonFormContainer.style.display = "none";
-            addBtn.innerText = "Buy new Pokemon card!"
+            formButton.innerText = "Buy new Pokemon card!"
         }
     })
 }
+
 function renderPokemon(pokemon){
     let card = document.createElement("li")
     card.className = "card"
@@ -71,7 +73,7 @@ function sellCard(card, pokemon){
     card.querySelector("#sell-card").addEventListener("click", () => {
         card.remove()
         document.querySelector("#balance").innerText = parseFloat(document.querySelector("#balance").innerText) + parseFloat(pokemon.price)
-        deleteSellCard(pokemon.id)
+        deleteCard(pokemon.id)
         patchBalance(parseFloat(document.querySelector("#balance").innerText))
         alert("Pokemon card successfully sold!")
     })
@@ -87,14 +89,14 @@ function fetchRequest(){
     .then(data => data.forEach(value => handleBalance(value)))
 }
 
-function postCard(pokemonObj){
+function postCard(formData){
     fetch("http://localhost:3000/pokemon", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
             Accept: "application/json"
         },
-        body: JSON.stringify(pokemonObj)
+        body: JSON.stringify(formData)
     })
     .then(response => response.json())
     .then(pokemon => renderPokemon(pokemon))
@@ -117,7 +119,7 @@ function patchBalance(balance){
     .then(balance => console.log(balance))
 }
 
-function deleteSellCard(id){
+function deleteCard(id){
     fetch(`http://localhost:3000/pokemon/${id}`, {
         method: "DELETE",
         headers: {
